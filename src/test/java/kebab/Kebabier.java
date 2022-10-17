@@ -16,4 +16,8 @@ public class Kebabier {
 		return new Kebab(this.ingredients);
 	}
 
+	public static Kebabier unKebab() {
+		return new Kebabier();
+	}
+
 }

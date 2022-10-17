@@ -2,6 +2,8 @@ package kebab;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static kebab.Kebabier.unKebab;
 import static org.assertj.core.api.Assertions.*;
 
 class KebabTest {
@@ -23,7 +25,7 @@ class KebabTest {
 	
 	@BeforeEach
 	public void preparerLesKebabs() {
-		this.kebabAgneau = new Kebabier()
+		this.kebabAgneau = unKebab()
 				.avec(SALADE)
 				.avec(TOMATE)
 				.avec(OIGNON)
@@ -32,7 +34,7 @@ class KebabTest {
 				.avec(SAUCE)
 				.preparerLeKebab();
 		
-		this.kebabVegetarien = new Kebabier()
+		this.kebabVegetarien = unKebab()
 				.avec(SALADE)
 				.avec(TOMATE)
 				.avec(OIGNON)
@@ -41,7 +43,7 @@ class KebabTest {
 				.avec(SAUCE)
 				.preparerLeKebab();
 		
-		this.kebabCrevette = new Kebabier()
+		this.kebabCrevette = unKebab()
 				.avec(SALADE)
 				.avec(TOMATE)
 				.avec(CREVETTE)
@@ -49,7 +51,7 @@ class KebabTest {
 				.avec(SAUCE)
 				.preparerLeKebab();
 		
-		this.kebabThon = new Kebabier()
+		this.kebabThon = unKebab()
 				.avec(SALADE)
 				.avec(TOMATE)
 				.avec(OIGNON)
