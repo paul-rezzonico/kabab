@@ -13,5 +13,10 @@ public class Kebab {
 	public List<Ingredient> listerLesIngredients() {
 		return this.ingredients;
 	}
+	
+	public boolean estVegetarien() {
+		//TODO method
+		return false;
+	}
 
 }

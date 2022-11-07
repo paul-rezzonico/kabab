@@ -5,6 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static kebab.Kebabier.unKebab;
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class KebabTest {
 	
@@ -75,5 +79,29 @@ class KebabTest {
 		
 		assertThat(kebabThon.listerLesIngredients()).containsExactly(SALADE, TOMATE, OIGNON, THON, PAIN, SAUCE, FROMAGE);
 		
+	}
+	
+	@Test
+	void kebab_agneau_n_est_pas_vegetarien() {
+		
+		assertFalse(kebabAgneau.estVegetarien());
+	}
+	
+	@Test
+	void kebab_vegetarien_est_vegetarien() {
+		
+		assertTrue(kebabVegetarien.estVegetarien());
+	}
+	
+	@Test
+	void kebab_crevette_n_est_pas_vegetarien() {
+		
+		assertFalse(kebabCrevette.estVegetarien());
+	}
+	
+	@Test
+	void kebab_thon_n_est_pas_vegetarien() {
+		
+		assertFalse(kebabThon.estVegetarien());
 	}
 }
