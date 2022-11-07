@@ -3,6 +3,16 @@ package kebab;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import kebab.ingredients.Agneau;
+import kebab.ingredients.Crevette;
+import kebab.ingredients.Fromage;
+import kebab.ingredients.Oignon;
+import kebab.ingredients.Pain;
+import kebab.ingredients.Salade;
+import kebab.ingredients.Sauce;
+import kebab.ingredients.Thon;
+import kebab.ingredients.Tomate;
+
 import static kebab.Kebabier.unKebab;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
