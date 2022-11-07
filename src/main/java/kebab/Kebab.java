@@ -2,6 +2,7 @@ package kebab;
 
 import java.util.List;
 
+import kebab.visiteur.VisiteurGluten;
 import kebab.visiteur.VisiteurPescetarien;
 import kebab.visiteur.VisiteurVegetarien;
 
@@ -33,4 +34,11 @@ public class Kebab {
 		return visiteur.estRespecte();
 	}
 
+	public boolean estSansGluten() {
+		VisiteurGluten visiteur = new VisiteurGluten();
+		for (Ingredient ingredient : ingredients) {
+			ingredient.accepter(visiteur);
+		}
+		return visiteur.estRespecte();
+	}
 }

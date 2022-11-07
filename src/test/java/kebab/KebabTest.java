@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import kebab.ingredients.Agneau;
 import kebab.ingredients.Crevette;
 import kebab.ingredients.Fromage;
+import kebab.ingredients.GaletteDeSarrasin;
 import kebab.ingredients.Oignon;
 import kebab.ingredients.Pain;
 import kebab.ingredients.Salade;
@@ -24,6 +25,7 @@ class KebabTest {
 	private Kebab kebabVegetarien;
 	private Kebab kebabCrevette;
 	private Kebab kebabThon;
+	private Kebab GaletteKebab;
 	
 	private static final Sauce SAUCE = new Sauce();
 	private static final Pain PAIN = new Pain();
@@ -34,6 +36,7 @@ class KebabTest {
 	private static final Crevette CREVETTE = new Crevette();
 	private static final Thon THON = new Thon();
 	private static final Fromage FROMAGE = new Fromage();
+	private static final GaletteDeSarrasin GALETTE = new GaletteDeSarrasin();
 	
 	@BeforeEach
 	public void preparerLesKebabs() {
@@ -70,6 +73,12 @@ class KebabTest {
 				.avec(PAIN)
 				.avec(SAUCE)
 				.avec(FROMAGE)
+				.preparerLeKebab();
+		
+		this.GaletteKebab = unKebab()
+				.avec(SALADE)
+				.avec(OIGNON)
+				.avec(AGNEAU)
 				.preparerLeKebab();
 	}
 
@@ -135,5 +144,24 @@ class KebabTest {
 		
 		assertTrue(kebabThon.estPescetarien());
 	}
+
 	
+	
+	@Test
+	void kebab_thon_n_est_pas_sans_gluten() {
+		
+		assertFalse(kebabThon.estSansGluten());
+	}
+	
+	@Test
+	void kebab_crevette_n_est_pas_sans_gluten() {
+		
+		assertFalse(kebabCrevette.estSansGluten());
+	}
+	
+	@Test
+	void kebab_galette_est_sans_gluten() {
+		
+		assertTrue(GaletteKebab.estSansGluten());
+	}
 }
