@@ -3,6 +3,7 @@ package kebab.visiteur;
 import kebab.ingredients.Agneau;
 import kebab.ingredients.Crevette;
 import kebab.ingredients.Fromage;
+import kebab.ingredients.GaletteDeSarrasin;
 import kebab.ingredients.Oignon;
 import kebab.ingredients.Pain;
 import kebab.ingredients.Salade;
@@ -21,6 +22,7 @@ public interface RegimeVisiteur {
 	void visiteSauce(Sauce sauce);
 	void visiteThon(Thon thon);
 	void visiteTomate(Tomate tomate);
+	void visiteGaletteDeSarrasin(GaletteDeSarrasin galette);
 	boolean estRespecte();
 	
 }

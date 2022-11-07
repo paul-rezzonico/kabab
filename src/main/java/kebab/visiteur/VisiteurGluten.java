@@ -11,19 +11,17 @@ import kebab.ingredients.Sauce;
 import kebab.ingredients.Thon;
 import kebab.ingredients.Tomate;
 
-public class VisiteurVegetarien implements RegimeVisiteur {
-    
-	private boolean vegetarien = true;
+public class VisiteurGluten implements RegimeVisiteur {
+
+	private boolean sansGluten = true;
 	
 	@Override
 	public void visiteAgneau(Agneau agneau) {
-		this.vegetarien = false;
 
 	}
 
 	@Override
 	public void visiteCrevette(Crevette crevette) {
-		this.vegetarien = false;
 
 	}
 
@@ -38,39 +36,39 @@ public class VisiteurVegetarien implements RegimeVisiteur {
 	}
 
 	@Override
-	public void visitePain(Pain pain) {;
+	public void visitePain(Pain pain) {
+		this.sansGluten = false;
 
 	}
 
 	@Override
-	public void visiteSalade(Salade salade) {;
+	public void visiteSalade(Salade salade) {
 
 	}
 
 	@Override
-	public void visiteSauce(Sauce sauce) {;
+	public void visiteSauce(Sauce sauce) {
 
 	}
 
 	@Override
 	public void visiteThon(Thon thon) {
-		this.vegetarien = false;
 
 	}
 
 	@Override
 	public void visiteTomate(Tomate tomate) {
-		
-	}
 
-	@Override
-	public boolean estRespecte() {
-		return this.vegetarien;
 	}
 
 	@Override
 	public void visiteGaletteDeSarrasin(GaletteDeSarrasin galette) {
-		
+
+	}
+
+	@Override
+	public boolean estRespecte() {
+		return this.sansGluten;
 	}
 
 }

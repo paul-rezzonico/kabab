@@ -3,6 +3,7 @@ package kebab.visiteur;
 import kebab.ingredients.Agneau;
 import kebab.ingredients.Crevette;
 import kebab.ingredients.Fromage;
+import kebab.ingredients.GaletteDeSarrasin;
 import kebab.ingredients.Oignon;
 import kebab.ingredients.Pain;
 import kebab.ingredients.Salade;
@@ -63,6 +64,11 @@ public class VisiteurPescetarien implements RegimeVisiteur {
 	@Override
 	public boolean estRespecte() {
 		return this.estPescetarien;
+	}
+
+	@Override
+	public void visiteGaletteDeSarrasin(GaletteDeSarrasin galette) {
+		
 	}
 
 }
