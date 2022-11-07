@@ -111,4 +111,29 @@ class KebabTest {
 		
 		assertFalse(kebabThon.estVegetarien());
 	}
+	
+	@Test
+	void kebab_agneau_n_est_pas_pescetarien() {
+		
+		assertFalse(kebabAgneau.estPescetarien());
+	}
+	
+	@Test
+	void kebab_vegetarien_est_pescetarien() {
+		
+		assertTrue(kebabVegetarien.estPescetarien());
+	}
+	
+	@Test
+	void kebab_crevette_est_pas_pescatarien() {
+		
+		assertTrue(kebabCrevette.estPescetarien());
+	}
+	
+	@Test
+	void kebab_thon_est_pas_pescetarien() {
+		
+		assertTrue(kebabThon.estPescetarien());
+	}
+	
 }

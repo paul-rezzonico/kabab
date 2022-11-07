@@ -2,6 +2,7 @@ package kebab;
 
 import java.util.List;
 
+import kebab.visiteur.VisiteurPescetarien;
 import kebab.visiteur.VisiteurVegetarien;
 
 public class Kebab {
@@ -18,6 +19,14 @@ public class Kebab {
 	
 	public boolean estVegetarien() {
 		VisiteurVegetarien visiteur = new VisiteurVegetarien();
+		for (Ingredient ingredient : ingredients) {
+			ingredient.accepter(visiteur);
+		}
+		return visiteur.estRespecte();
+	}
+	
+	public boolean estPescetarien() {
+		VisiteurPescetarien visiteur = new VisiteurPescetarien();
 		for (Ingredient ingredient : ingredients) {
 			ingredient.accepter(visiteur);
 		}
